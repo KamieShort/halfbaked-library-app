@@ -24,7 +24,6 @@ function App() {
           </Route>
         </Switch>
       </BrowserRouter>
-      <BookList />
     </main>
   );
 }
