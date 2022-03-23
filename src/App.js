@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
-import Home from './views/Home/Home';
+// import Header from './components/Header/Header';
+import LandingPage from './views/Books/LandingPage/LandingPage';
 import BookList from './views/Books/BookList';
 import BookDetail from './views/Books/BookDetail';
 
@@ -11,10 +11,10 @@ function App() {
     <main className="container">
       <h1>Library Catalog</h1>
       <BrowserRouter>
-        <Header />
+        {/* <Header /> */}
         <Switch>
           <Route exact path="/">
-            <Home />
+            <LandingPage />
           </Route>
           <Route exact path="/books">
             <BookList />
