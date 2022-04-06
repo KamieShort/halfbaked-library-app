@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import Book from '../../components/book/Book';
 import { getBooks } from '../../services/books';
+import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function BookList() {
   const [books, setBooks] = useState([]);
@@ -18,13 +20,20 @@ function BookList() {
   if (loading) return <h1>Loading books...</h1>;
 
   return (
-    <ul className="book-list" aria-label="book list">
-      {books.map((book) => (
-        <li key={book.book_id}>
-          <Book book={book} />
-        </li>
-      ))}
-    </ul>
+    <>
+      <NavLink className="navlink" exact to="/">
+        Landing Page
+      </NavLink>
+      <ul className="book-list" aria-label="book list">
+        {books.map((book) => (
+          <li key={book.book_id}>
+            <Link to={`/books/${book.book_id}`}>
+              <Book book={book} />
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 

@@ -1,0 +1,9 @@
+.landingpage {
+  font-size: 25px;
+  color: chartreuse;
+}
+
+a:visited {
+  text-decoration: none;
+  color: orange;
+}
